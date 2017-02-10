@@ -5,7 +5,7 @@ Lua binding for [mbedtls](https://github.com/ARMmbed/mbedtls).
 Doc
 ===
 *mbedtls*
-	
+
 
 mbedtls.md5
 ==
@@ -88,7 +88,7 @@ Create and initalize a new SHA1 context instance.
 
 sha1:starts()
 =
-Setup the MD5 context.
+Setup the SHA1 context.
 
 sha1:update(input)
 =
@@ -112,6 +112,66 @@ Clone the state of an SHA1 context.
 
 * _returns_ (sha1) - SHA1 context
 
+mbedtls.sha256
+==
 
-	
+Example
+=
+```lua
+local sha256 = require("mbedtls").sha256
+-- sha256
+local ctx = sha256.new()
+ctx:starts()
+ctx:update("test test")
+local checksum = ctx:finish(true)
+
+-- sha225
+local ctx = sha256.new(true)
+ctx:starts()
+ctx:update("test test")
+local checksum = ctx:finish(true)
+```
+
+mbedtls.sha256(input, [hexify], [is224])
+=
+
+* *input* (string) input
+* *hexify* (boolean) Return the result as hex-string (default: false)
+* *is224* (boolean) Use SHA224 (default: false)
+* _returns_ (string) string/hex-string
+
+mbedtls.sha256.new(is224)
+=
+Create and initalize a new SHA256 context instance.
+
+* *is224* (boolean) Use SHA224
+
+sha256:starts(is224)
+=
+Setup the SHA256 context.
+
+* *is224* (boolean) Use SHA224
+
+sha256:update(input)
+=
+
+Process SHA256 buffer.
+
+* *input* (string)
+
+sha256:finish([hexify])
+=
+
+SHA256 final digest.
+
+* *hexify* (boolean) - Convert the result to hex-string
+* _returns_ (string) - SHA256 checksum result.
+
+sha256:clone()
+==
+
+Clone the state of an SHA256 context.
+
+* _returns_ (sha256) - SHA256 context
+
 
