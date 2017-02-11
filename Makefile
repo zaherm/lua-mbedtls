@@ -35,6 +35,7 @@ OBJS= src/l$(LIBNAME)_aux.o \
 			src/l$(LIBNAME)_sha1.o \
 			src/l$(LIBNAME)_sha256.o \
 			src/l$(LIBNAME)_sha512.o \
+			src/l$(LIBNAME)_ripemd160.o \
 			src/l$(LIBNAME).o
 
 all: $T
