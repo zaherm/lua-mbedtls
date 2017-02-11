@@ -125,7 +125,7 @@ ctx:starts()
 ctx:update("test test")
 local checksum = ctx:finish(true)
 
--- sha225
+-- sha224
 local ctx = sha256.new(true)
 ctx:starts()
 ctx:update("test test")
@@ -174,4 +174,66 @@ Clone the state of an SHA256 context.
 
 * _returns_ (sha256) - SHA256 context
 
+
+mbedtls.sha512
+==
+
+Example
+=
+```lua
+local sha512 = require("mbedtls").sha512
+-- sha512
+local ctx = sha512.new()
+ctx:starts()
+ctx:update("test test")
+local checksum = ctx:finish(true)
+
+-- sha385
+local ctx = sha512.new(true)
+ctx:starts()
+ctx:update("test test")
+local checksum = ctx:finish(true)
+```
+
+mbedtls.sha512(input, [hexify], [is384])
+=
+
+* *input* (string) input
+* *hexify* (boolean) Return the result as hex-string (default: false)
+* *is384* (boolean) Use SHA384 (default: false)
+* _returns_ (string) string/hex-string
+
+mbedtls.sha512.new([is384])
+=
+Create and initalize a new SHA384 context instance.
+
+* *is384* (boolean - optional) Use SHA384
+
+sha512:starts(is384)
+=
+Setup the SHA512 context.
+
+* *is384* (boolean - optional) Use SHA384
+
+sha512:update(input)
+=
+
+Process SHA512 buffer.
+
+* *input* (string)
+
+sha512:finish([hexify])
+=
+
+SHA512 final digest.
+
+* *hexify* (boolean) - Convert the result to hex-string
+* _returns_ (string) - SHA512 checksum result.
+
+sha512:clone()
+==
+
+Clone the state of an SHA512 context.
+
+* _returns_ (sha512) - SHA512 context
 
