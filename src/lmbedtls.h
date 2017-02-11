@@ -7,6 +7,7 @@
 #include "lmbedtls_sha256.h"
 #include "lmbedtls_sha512.h"
 #include "lmbedtls_ripemd160.h"
+#include "lmbedtls_base64.h"
 
 #define LMBEDTLS_VERSION "lua-mbedtls 0.0.1"
 #define LMBEDTLS_COPYRIGHT "Copyright (c) 2017, Zaher Marzuq"
@@ -18,6 +19,7 @@ static const luaL_Reg lmbedtls_mods[] = {
   { "sha256", lmbedtls_sha256_open },
   { "sha512", lmbedtls_sha512_open },
   { "ripemd160", lmbedtls_ripemd160_open },
+  { "base64", lmbedtls_base64_open },
   { NULL, NULL }
 };
 

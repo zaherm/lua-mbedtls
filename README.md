@@ -12,5 +12,6 @@ Doc
 * [**sha256**](doc/sha256.md)
 * [**sha512**](doc/sha512.md)
 * [**ripemd160**](doc/ripemd160.md)
+* [**base64**](doc/base64.md)
 
 
