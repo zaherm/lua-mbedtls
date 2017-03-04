@@ -84,3 +84,8 @@ void lmbedtls_hexify(unsigned char *obuf, const unsigned char *ibuf, int len){
   }
 }
 
+int lmbedtls_checkoption(lua_State *L, int index, const char *key,
+    const char *const keys[], const int values[]) {
+  int i = luaL_checkoption(L, index, key, keys);
+  return values[i];
+}

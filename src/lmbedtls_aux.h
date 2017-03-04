@@ -15,5 +15,8 @@ LUALIB_API void lmbedtls_pushhexstring(lua_State *L, const unsigned char *buf, i
 void lmbedtls_error(lua_State *L, const char *msg);
 void lmbedtls_assert(lua_State *L, int cond, const char *msg);
 void lmbedtls_hexify(unsigned char *obuf, const unsigned char *ibuf, int len);
+
+int lmbedtls_checkoption(lua_State *L, int index, const char *key,
+    const char *const keys[], const int values[]);
 #endif
 

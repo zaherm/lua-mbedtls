@@ -37,6 +37,7 @@ OBJS= src/l$(LIBNAME)_aux.o \
 			src/l$(LIBNAME)_sha512.o \
 			src/l$(LIBNAME)_ripemd160.o \
 			src/l$(LIBNAME)_base64.o \
+			src/l$(LIBNAME)_aes.o \
 			src/l$(LIBNAME).o
 
 all: $T

@@ -5,7 +5,9 @@ Lua binding for [mbedtls](https://github.com/ARMmbed/mbedtls).
 
 Doc
 ===
-**mbedtls**
+
+Hashing
+==
 
 * [**md5**](doc/md5.md)
 * [**sha1**](doc/sha1.md)
@@ -14,4 +16,8 @@ Doc
 * [**ripemd160**](doc/ripemd160.md)
 * [**base64**](doc/base64.md)
 
+Encryption/Decryption
+==
+
+* [**aes**](doc/aes.md)
 
